@@ -192,7 +192,7 @@ void rcv_snd(int n)
 			}
 			if(strstr(ptr,"sendto ")==str)
 			{
-				sent=1;
+				
 				pmc=0;
 				ptr=ptr+7;
 				while(*ptr!='|')
@@ -265,7 +265,6 @@ void rcv_snd(int n)
 						break;
 					}
 				}
-				sent=0;
 				continue;
 			}
 			ticks=time(NULL);
@@ -279,7 +278,7 @@ void rcv_snd(int n)
 			for(i=0;i<MAXMEM;i++)
 			{
 				if(i==n)continue;
-				if(connfd[i]!=-1&&sent!=1)
+				if(connfd[i]!=-1)
 				{
 					write(connfd[i],buff,strlen(buff));
 				}
