@@ -103,7 +103,7 @@ void rcv_snd(int n)
 	char *ptr;
 	char *str;
 	char pmn[NAMELEN]={'\0'};
-	int pmc=0;
+	int pmc=0,sent=0;
 	
 	int len;
 	len=read(connfd[n],name[n],NAMELEN);
